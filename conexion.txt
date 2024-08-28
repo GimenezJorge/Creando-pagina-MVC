@@ -1,0 +1,1 @@
+Scaffold-DbContext "Server=SQLSERVER\SQLSERVER;Initial Catalog=bdg3;User ID=bdg3;Password=bdg3;Encrypt=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
