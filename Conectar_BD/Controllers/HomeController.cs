@@ -15,9 +15,12 @@ namespace Conectar_BD.Controllers
             _logger = logger;
         }
 
+        
+
+
         public IActionResult Index()
         {
-            return View();
+            return View(db.Usuarios.ToList());
         }
 
         public IActionResult Privacy()
@@ -47,11 +50,12 @@ namespace Conectar_BD.Controllers
                 db.Usuarios.Add(usuario);
                 db.SaveChanges();
 
-                HttpContext.Session.SetString("idUsuario", usuario.IdUsuario.ToString());
+               // HttpContext.Session.SetString("idUsuario", usuario.IdUsuario.ToString());
                 HttpContext.Session.SetString("email", usuario.Email.ToString());
                 HttpContext.Session.SetString("clave", usuario.Clave.ToString());
                 return RedirectToAction("Index", "Home");
             }
+
         }
     }
 }
