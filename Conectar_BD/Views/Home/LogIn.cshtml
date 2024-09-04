@@ -1,23 +1,17 @@
 ﻿@model Conectar_BD.Models.Usuario
 
 @{
-    ViewData["Title"] = "SignUp";
+    ViewData["Title"] = "LogIn";
 }
 
-<h1>SignUp</h1>
+<h1>LogIn</h1>
 
 <h4>Usuario</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="SignUp">
+        <form asp-action="LogIn">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-<!--            <div class="form-group">
-                <label asp-for="IdUsuario" class="control-label"></label>
-                <input asp-for="IdUsuario" class="form-control" />
-                <span asp-validation-for="IdUsuario" class="text-danger"></span>
-            </div>
-                        -->
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" />
@@ -28,23 +22,12 @@
                 <input asp-for="Clave" class="form-control" />
                 <span asp-validation-for="Clave" class="text-danger"></span>
             </div>
-
-            <div class="form-group">
-                <label asp-for="ReClave" class="control-label"></label>
-                <input asp-for="ReClave" class="form-control" />
-                <span asp-validation-for="ReClave" class="text-danger"></span>
-            </div>
-
-
-
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
-
             <div class="form-group">
-                <div style="color: red;">@ViewBag.Notification</div>
+                <div style="color: green;">@ViewBag.Notification</div>
             </div>
-
         </form>
     </div>
 </div>
@@ -53,6 +36,3 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
